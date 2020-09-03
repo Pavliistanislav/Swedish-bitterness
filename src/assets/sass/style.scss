@@ -1,30 +1,278 @@
+@import '_fonts';
+
 *,
 *:before,
-*:after,{
-	box-sizing: border-box;
+*:after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-family: 'Monsterrat', sans-serif;
+  font-size: 16px;
+  color: #273d46;
+  line-height: 1;
+  /* scroll-behavior: smooth; */
 }
 
 body {
-	margin: 0;
-  	font-family: 'Raleway', sans-serif;
-  	font-size: 14px;
-  	background-color: #fff;
-  	-webkit-font-smoothing: antialiased;
+  // background-color: #e8e8e8;
+  height: 100vh;
 }
 
-h1, h2, h3, h4, h5 ,h6 {
-	margin: 0;
+nav,
+footer,
+header,
+aside {
+  display: block;
 }
 
-p{
-	margin: 0 0 10px;
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-size: inherit;
+  font-weight: inherit;
+  margin: 0;
 }
 
-//Container
+a {
+  text-decoration: none;
+  display: inline-block;
+}
+
+ul,
+li {
+  list-style-type: none;
+}
+
+p {
+  /* font-size: 1.6rem; */
+  margin: 0 0 10px;
+}
+
+img {
+  width: 100%;
+  max-width: 100%;
+  vertical-align: top;
+}
+
+:focus,
+:active {
+  outline: none;
+}
+
+a:focus,
+a:active {
+  outline: none;
+}
+
+a:hover {
+  text-decoration: none;
+}
+
+input,
+button,
+textarea {
+  font-family: inherit;
+}
+
+input::-ms-clear {
+  display: none;
+}
+
+button {
+  cursor: pointer;
+  border: none;
+}
+
+button::-moz-focus-inner {
+  padding: 0;
+  bottom: 0;
+}
+
+section {
+  padding: 5rem 0;
+}
+
 .container {
-	width: 100%;
-	max-width: 1200px;
-	margin: 0 auto;
-	padding: 0 15px;
+  width: 100%;
+  max-width: 1170px;
+  margin: 0 auto;
+  padding: 0 15px;
 }
 
+
+.header__inner {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 105px;
+  margin-top: 30px;
+}
+
+.header__text {
+  font-size: 16px;
+  font-weight: 400;
+  color: #9a9a9a;
+  margin-right: auto;
+  margin-left: 31px;
+}
+
+.header__phone a {
+  font-size: 20px;
+  font-weight: 500;
+  color: #303030;
+  position: relative;
+
+}
+
+.header__phone a:before {
+  content: '';
+  background-image: url('../images/phone.svg');
+  width: 15px;
+  height: 15px;
+  position: absolute;
+  left: -27px;
+  top: 3px;
+}
+
+.header__phone-text {
+  font-size: 12px;
+  font-weight: 400;
+  color: #9a9a9a;
+  text-align: right;
+  padding-top: 7px;
+}
+
+.top {
+  margin-bottom: 75px;
+}
+
+.top__images {
+  background: url("../images/background.jpg") center no-repeat;
+  background-size: cover;
+  max-width: 1720px;
+  min-height: 544px;
+  margin: 0 auto;
+}
+
+.top__wrapper {
+  margin-top: -450px;
+}
+
+.top__inner {
+  display: flex;
+  justify-content: space-between;
+}
+
+.top__inner-img {
+  margin-left: 131px;
+}
+
+.top__inner-form {
+  max-width: 571px;
+  width: 100%;
+  margin-top: 74px;
+}
+
+.top__inner-wrapper {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  margin-bottom: 95px;
+}
+
+.top__inner-suptitle {
+  font-size:14px;
+  font-weight: 700;
+  color: #fff;
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+  margin-bottom: 15px;
+}
+
+.top__inner-title {
+  font-size:60px;
+  font-weight: 600;
+  color: #fff;
+  margin: 9px 0 34px 0;
+}
+
+.top__inner-text {
+  font-size: 1.2rem;
+  font-weight: 400;
+  color: #fff;
+}
+
+.top-form {
+  max-width: 571px;
+  background-color: #fff;
+  padding: 20px;
+}
+
+.top-form form {
+  border: 1px solid #a4c58c;
+  overflow: hidden;
+  position: relative;
+}
+
+.top-form__inner {
+  padding: 50px 50px 118px 50px;
+}
+
+.top-form__title {
+  width: 225px;
+  font-size: 14px;
+  font-weight: 700;
+  color: #000;
+  letter-spacing: 2px;
+  margin-bottom: 32px;
+  text-transform: uppercase;
+  margin-bottom: 35px;
+}
+
+.top-form input {
+  border: none;
+  padding-top: 14px;
+  padding-bottom: 14px;
+  border-bottom: 1px solid #cddcbc;
+  font-size: 14px;
+  font-weight: 400;
+  color: #000;
+  margin-right: 30px;
+}
+
+.top-form input:last-child {
+  margin-right: 0;
+}
+
+.top-form input::placeholder {
+  color: #cddcbc;
+}
+
+.top-form button {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  padding: 25px 110px 25px 76px;
+  color: #fff;
+  font-size: 14px;
+  font-weight: 700;
+  letter-spacing: 1px;
+  background-color: #7eb252;
+  text-transform: uppercase;
+}
+
+.top-form button::after {
+  content: '';
+  background-image: url('../images/arrow.png');
+  position: absolute;
+  top: 30px;
+  right: 60px;
+  width: 31px;
+  height: 9px;
+}

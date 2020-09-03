@@ -1,0 +1,7 @@
+//Monsterrat
+@import 'mixins/font-face.scss';
+
+@include font-face ('Monsterrat', '../fonts/Montserrat/Montserrat-Regular', 400, normal);
+@include font-face ('Monsterrat', '../fonts/Montserrat/Montserrat-Medium', 500, normal);
+@include font-face ('Monsterrat', '../fonts/Montserrat/Montserrat-SemiBold', 600, normal);
+@include font-face ('Monsterrat', '../fonts/Montserrat/Montserrat-Bold', 700, bold);
