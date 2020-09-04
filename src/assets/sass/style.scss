@@ -95,12 +95,12 @@ button::-moz-focus-inner {
 }
 
 section {
-  padding: 5rem 0;
+  padding: 0;
 }
 
 .container {
   width: 100%;
-  max-width: 1170px;
+  max-width: 1200px;
   margin: 0 auto;
   padding: 0 15px;
 }
@@ -243,11 +243,10 @@ section {
   font-size: 14px;
   font-weight: 400;
   color: #000;
-  margin-right: 30px;
 }
 
-.top-form input:last-child {
-  margin-right: 0;
+.top-form input + input {
+  margin-left: 30px;
 }
 
 .top-form input::placeholder {
@@ -275,4 +274,60 @@ section {
   right: 60px;
   width: 31px;
   height: 9px;
+}
+
+.advantages {
+  margin-bottom: 200px;
+}
+
+.advantages__inner {
+  display: flex;
+  justify-content: space-around;
+}
+
+.advantages__item {
+  width: 240px;
+  padding-left: 40px;
+  padding-top: 35px;
+  position: relative;
+}
+
+.advantages__item::before {
+  content: '';
+  position: absolute;
+  width: 25px;
+  height: 25px;
+  border-radius: 50%;
+  border: 5px solid rgba(126, 178, 82, 0.3);
+  top: 0;
+  left: 0;
+}
+
+.advantages__item-number {
+  font-size: 18px;
+  font-weight: 600;
+  color: #a4c58c;
+  line-height: 24px;
+  border-bottom: 3px solid #a4c58c;
+  display: inline-block;
+}
+
+.advantages__item-number span {
+  font-size: 30px;
+}
+
+.advantages__item-text {
+  padding-top: 20px;
+  font-size: 16px;
+  font-weight: 400;
+  color: #000;
+}
+
+.list__title {
+  font-size: 40px;
+  font-weight: 700;
+  color: #2f2f2f;
+  line-height: 50px;
+  max-width: 470px;
+  margin-bottom: 30px;
 }
