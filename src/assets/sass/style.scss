@@ -111,11 +111,9 @@ section {
   justify-content: space-between;
   align-items: center;
   height: 105px;
-  margin-top: 30px;
 }
 
 .header__text {
-  font-size: 16px;
   font-weight: 400;
   color: #9a9a9a;
   margin-right: auto;
@@ -203,7 +201,7 @@ section {
 }
 
 .top__inner-text {
-  font-size: 1.2rem;
+  font-size: 18px;
   font-weight: 400;
   color: #fff;
 }
@@ -230,6 +228,7 @@ section {
   font-weight: 700;
   color: #000;
   letter-spacing: 2px;
+  line-height: 20px;
   margin-bottom: 32px;
   text-transform: uppercase;
   margin-bottom: 35px;
@@ -318,7 +317,6 @@ section {
 
 .advantages__item-text {
   padding-top: 20px;
-  font-size: 16px;
   font-weight: 400;
   color: #000;
 }
@@ -330,4 +328,308 @@ section {
   line-height: 50px;
   max-width: 470px;
   margin-bottom: 30px;
+}
+
+.list__inner {
+  display: flex;
+  justify-content: space-between;
+}
+
+.tabs {
+  padding-right: 19px;
+  width: 100%;
+}
+
+.tab {
+  font-size: 14px;
+  font-weight: 600;
+  line-height: 20px;
+  display: flex;
+  align-items: center;
+  color: #303030;
+  padding: 24px 40px 24px 0;
+  border-bottom: 1px solid #e6efde;
+  cursor: pointer;
+  text-transform: uppercase;
+}
+
+.tab.active {
+  position: relative;
+}
+
+.tab.active::after {
+  content: '';
+  position: absolute;
+  right: 25px;
+  background-image: url('../images/arrow.svg');
+  width: 8px;
+  height: 13px;
+}
+
+.tabs__box .tab.active::after {
+  display: none;
+}
+
+.tab span {
+  color: #a4c58c;
+  margin-right: 23px;
+}
+
+.tabs__box {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.tabs__box .tab {
+  font-weight: 400;
+  width: 50%;
+  text-transform: none;
+  display: flex;
+  align-items: center;
+}
+
+.tabs__box span {
+  font-size: 12px;
+}
+
+.tabs__box .tab:first-child,
+.tabs__box .tab:nth-child(3) {
+  border-right: 1px solid #e6efde;
+  padding-right: 22px;
+}
+
+.tabs__box .tab:last-child,
+.tabs__box .tab:nth-child(2) {
+  padding-left: 25px;
+}
+
+
+
+.tabs__content {
+  min-width: 500px;
+  height: 689px;
+  background: url('../images/body.jpg') top center no-repeat;
+  background-size: cover;
+  position: relative;
+  margin-top: -170px;
+}
+
+.tab-item {
+  display: none;
+  font-weight: 700;
+  font-size: 12px;
+  color: #fff;
+  width: 44px;
+  height: 44px;
+  border: 8px solid rgba(243, 247, 240, 0.8);
+  border-radius: 50%;
+  position: absolute;
+  text-align: center;
+  line-height: 30px;
+}
+
+.tab-item:first-child {
+  display: block;
+}
+
+.item-1 {
+  left: 150px;
+  top: 182px;
+}
+
+.item-2{
+  left: 300px;
+  top: 200px;
+}
+
+.item-3{
+  left: 231px;
+  top: 22px;
+}
+
+.item-4{
+  left: 212px;
+  top: 152px;
+}
+
+.item-5{
+  left: 227px;
+  top: 15px;
+}
+
+.item-6{
+  left: 260px;
+  top: 315px;  
+}
+
+.item-7{
+  left: 227px;
+  top: 15px;
+}
+
+.item-8{
+  left: 227px;
+  top: 195px;
+}
+
+.item-9{
+  left: 248px;
+  top: 139px;
+}
+
+.tabs__reviews {
+  padding: 20px;
+  background-color: #f6f9f3;
+  max-width: 430px;
+  position: absolute;
+  bottom: 0;
+}
+
+.tabs__reviews-inner {
+  border: 1px solid #c5dab5;
+  padding: 30px 50px 30px 40px;
+}
+
+.tabs__reviews-text {
+  font-weight: 400;
+  color: #303030;
+  line-height: 24px;
+}
+
+.tabs__reviews-link {
+  font-size: 14px;
+  font-weight: 600;
+  color: #7eb152;
+  text-decoration: underline;
+  padding-bottom: 1px;
+  padding: 0 8px;
+  position: absolute;
+  bottom: 15px;
+  background-color: #f6f9f3;
+}
+
+.list__link {
+  display: flex;
+  justify-content: flex-end;
+  margin-top: 20px;
+  position: relative;
+}
+
+.list__link a{ 
+  padding: 22px 0;
+  color: #fff;
+  font-size: 14px;
+  font-weight: 700;
+  letter-spacing: 1px;
+  background-color: #7eb252;
+  text-transform: uppercase;
+  min-width: 500px;
+  text-align: center;
+}
+
+.list__link a::after {
+  content: '';
+  background-image: url('../images/arrow.png');
+  position: absolute;
+  top: 25px;
+  right: 80px;
+  width: 31px;
+  height: 9px;
+}
+
+.popularity {
+  padding-top: 200px;
+}
+
+.popularity__wrapper{
+  max-width: 1720px;
+  min-height: 645px;
+  margin: 0 auto;
+  background: url('../images/woman.jpg') no-repeat;
+}
+
+.popularity__inner {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+}
+
+.popularity__reason {
+  max-width: 500px;
+  width: 100%;
+}
+
+.popularity__reason-title {
+  font-weight: 700;
+  font-size: 40px;
+  line-height: 50px;
+  color: #303030;
+  padding-right: 8px;
+  margin-top: 48px;
+}
+
+.popularity__reason-subtitle {
+  padding: 48px 0;
+  font-size: 14px;
+  font-weight: 700;
+  line-height: 20px;
+  color: #303030;
+  text-transform: uppercase;
+}
+
+.popularity__reason-list li {
+  color: #303030;
+  font-weight: 400;
+  line-height: 22px;
+  margin-bottom: 45px;
+  padding-left: 40px;
+  position: relative;
+}
+
+.popularity__reason-list li::before {
+  position: absolute;
+  content: '';
+  left: 0;
+  width: 8px;
+  height: 13px;
+  background-image: url('../images/arrow.svg'); 
+  top:50%;
+  transform: translateY(-50%); 
+}
+
+.popularity__box {
+  background-color: #fff;
+  padding: 20px 30px;
+  margin-right: 62px;
+  position: relative;
+}
+
+
+.popularity__box-text {
+  border: 1px solid #c5dab5;
+  padding: 30px 20px;
+  font-weight: 400;
+  line-height: 24px; 
+}
+
+.popularity__box-link {
+  color: #fff;
+  font-size: 14px;
+  font-weight: 700;
+  letter-spacing: 1px;
+  background-color: #7eb252;
+  text-transform: uppercase;
+  text-align: center;
+  position: absolute;
+  padding: 22px 73px 22px 27px;
+}
+
+.popularity__box-link::after {
+  content: '';
+  background-image: url('../images/arrow.png');
+  position: absolute;
+  top: 25px;
+  right: 35px;
+  width: 31px;
+  height: 9px;
 }

@@ -1,5 +1,4 @@
-"use strict"
-
+"use strict";
 let { src, dest } = require("gulp"),
   gulp = require("gulp"),
   autoprefixer = require("gulp-autoprefixer"),
@@ -15,7 +14,9 @@ let { src, dest } = require("gulp"),
   del = require("del"),
   panini = require("panini"),
   concat = require("gulp-concat"),
-  browsersync = require("browser-sync").create()
+  ttf2woff = require("gulp-ttf2woff"),
+  ttf2woff2 = require("gulp-ttf2woff2"),
+  browsersync = require("browser-sync").create();
 
 /* Paths to source/build/watch files
 =========================*/
@@ -42,7 +43,7 @@ var path = {
     images: "src/assets/images/**/*.{jpg,png,svg,gif,ico}",
   },
   clean: "./dist",
-}
+};
 
 /* Tasks
 =========================*/
@@ -57,9 +58,9 @@ const browserSync = (done) => {
     //online: false, // Work offline without internet connection
     //tunnel: true,
     //tunnel: 'mmyproject' // Demonstration page: http://projectname.localtunnel.me
-  })
-  done()
-}
+  });
+  done();
+};
 
 // const browserSyncReload = (done) => {
 //     browsersync.reload();
@@ -67,7 +68,7 @@ const browserSync = (done) => {
 // }
 
 const html = () => {
-  panini.refresh()
+  panini.refresh();
   return src(path.src.html, { base: "src/" })
     .pipe(plumber())
     .pipe(
@@ -80,8 +81,8 @@ const html = () => {
       }),
     )
     .pipe(dest(path.build.html))
-    .pipe(browsersync.stream())
-}
+    .pipe(browsersync.stream());
+};
 
 const scss = () => {
   return src(path.src.scss, { base: "./src/assets/sass/" })
@@ -111,12 +112,12 @@ const scss = () => {
       }),
     )
     .pipe(dest(path.build.scss))
-    .pipe(browsersync.stream())
-}
+    .pipe(browsersync.stream());
+};
 
 const css = () => {
-  return gulp.src([]).pipe(concat("_libs.scss")).pipe(dest("src/assets/sass/")).pipe(browsersync.stream())
-}
+  return gulp.src([]).pipe(concat("_libs.scss")).pipe(dest("src/assets/sass/")).pipe(browsersync.stream());
+};
 
 const js = () => {
   return src(path.src.js, { base: "./src/assets/js/" })
@@ -131,8 +132,8 @@ const js = () => {
       }),
     )
     .pipe(dest(path.build.js))
-    .pipe(browsersync.stream())
-}
+    .pipe(browsersync.stream());
+};
 
 const script = () => {
   return gulp
@@ -140,8 +141,8 @@ const script = () => {
     .pipe(concat("libs.min.js"))
     .pipe(uglify())
     .pipe(gulp.dest("src/assets/js/libs"))
-    .pipe(browsersync.stream())
-}
+    .pipe(browsersync.stream());
+};
 
 const images = async () => {
   return src(path.src.images)
@@ -156,39 +157,39 @@ const images = async () => {
       }),
     )
     .pipe(dest(path.build.images))
-    .pipe(browsersync.stream())
-}
+    .pipe(browsersync.stream());
+};
 
 const fonts = () => {
-  return src(path.src.fonts)
-    .pipe(dest(path.build.fonts))
-}
+  return src(path.src.fonts).pipe(ttf2woff()).pipe(dest(path.build.fonts));
+  // return src(path.src.fonts).pipe(ttf2woff2()).pipe(dest(path.build.fonts));
+};
 
 const clean = () => {
-  return del(path.clean)
-}
+  return del(path.clean);
+};
 
 const watchFiles = () => {
-  gulp.watch([path.watch.html], html)
-  gulp.watch([path.watch.scss], scss)
+  gulp.watch([path.watch.html], html);
+  gulp.watch([path.watch.scss], scss);
   //gulp.watch([path.watch.css], css);
-  gulp.watch([path.watch.js], js)
+  gulp.watch([path.watch.js], js);
   //gulp.watch([path.watch.script], script);
-  gulp.watch([path.watch.images], images)
-}
+  gulp.watch([path.watch.images], images);
+};
 
-const build = gulp.series(clean, gulp.parallel(html, scss, js, images, fonts))
-const watch = gulp.parallel(build, watchFiles, browserSync)
+const build = gulp.series(clean, gulp.parallel(html, scss, js, images, fonts));
+const watch = gulp.parallel(build, watchFiles, browserSync);
 
 // export tasks
-exports.html = html
-exports.scss = scss
+exports.html = html;
+exports.scss = scss;
 //exports.css = css;
-exports.js = js
+exports.js = js;
 //exports.script = script;
-exports.images = images
-exports.fonts = fonts
-exports.clean = clean
-exports.build = build
-exports.watch = watch
-exports.default = watch
+exports.images = images;
+exports.fonts = fonts;
+exports.clean = clean;
+exports.build = build;
+exports.watch = watch;
+exports.default = watch;
